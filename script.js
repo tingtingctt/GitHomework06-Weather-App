@@ -28,7 +28,6 @@ function addCity() {
     renderCities();
 }
 
-console.log(new Date().toLocaleDateString());
 
 $("#run-search").on("click",function(event){
     event.preventDefault();
@@ -43,11 +42,51 @@ $("#run-search").on("click",function(event){
       method: "GET"
     }).then(function(response) {
       console.log(response);
-      console.log(response.dt.toLocaleDateString());
-  
-    //   $("#weatherIcon").html(response.weather[0].icon);
+
+      var lon = response.coord.lon;
+      var lat = response.coord.lat;
+      var icon = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+
+      $("#city").text(response.name);
+      $("#date").text("(" + new Date().toLocaleDateString() + ")");
+      $("#icon").attr("src", icon);
+      $("#temperature").text("Temperature: " + response.main.temp + "\xB0" + "F");
+      $("#humidity").text("Humidity: " + response.main.humidity + "%" );
+      $("#windSpeed").text("Wind Speed: " + response.wind.speed + " MPH");
 
       $("#cityName").val("");
+
+      $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=430c1d68fb49da82de0adb57f3d4371a",
+        method: "GET"
+      }).then(function(response) {
+        console.log(response);
+        console.log(response.value);
+        $("#uv").text("UV Index: ");
+        $("#uvIndex").text(response.value);
+        if (response.value >= 10){
+          $("#uvIndex").attr("style", "background-color: red");
+        }
+        else if (response.value >= 5){
+          $("#uvIndex").attr("style", "background-color: yellow");
+        }
+        else{
+          $("#uvIndex").attr("style", "background-color: green");
+        }
+      });
+
     });
+
+
+
+    $.ajax({
+      url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=430c1d68fb49da82de0adb57f3d4371a",
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    
+
 });
 
