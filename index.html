@@ -7,20 +7,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <style>
-        .forecast {
-            background-color: rgb(34, 90, 211);
-            margin: 10px;
-            width: 140px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
-    </style>
+  <style>
+      .forecast {
+          background-color: rgb(34, 90, 211);
+          margin: 10px;
+          width: 140px;
+          border-radius: 10px;
+          color: white;
+          text-align: center;
+      }
+  </style>
 </head>
 
 <body>
 <div class="container-sm">
+    <!-- header -->
     <div style="background-color: darkslategray; color: white; height: 80px; text-align: center; padding: 10px;">
       <h1 class="text-center">
         <strong> Weather Dashboard </strong>
@@ -28,30 +29,33 @@
     </div>
 
     <div class="row" style="margin: 10px;">
-        <div class="col-xs-3">
-            <br>
-            <label for="search-city" style="margin-left: 10px;"><h4>Search for a City:</h4></label>
-            <div class="row">
-                <div class="col-xs-11">
-                    <input type="text" id="cityName" style="margin-left: 20px;">
-                </div>
-                <div class="col-xs-1">
-                    <button type="submit" class="btn btn-default" id="run-search">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
+      <!-- search/add city input -->
+      <div class="col-xs-3">
+          <br>
+          <label for="search-city" style="margin-left: 10px;"><h4>Search for a City:</h4></label>
+          <div class="row">
+              <div class="col-xs-11">
+                  <input type="text" id="cityName" style="margin-left: 20px;">
+              </div>
+              <div class="col-xs-1">
+                  <button type="submit" class="btn btn-default" id="run-search">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </div>
+          </div>
 
-            <br>
+          <br>
 
-            <div id="citiesDiv" style="margin-left: 7px;">
+          <!-- added city will go here -->
+          <div id="citiesDiv" style="margin-left: 7px;">
 
-            </div>
+          </div>
 
         </div>
 
-       
+       <!-- weather section -->
         <div class="col-sm-9" style="margin: 0 0 0 40px">
+            <!-- current weather -->
             <div class="row">
                 <div class="col-xs-12" id="currentWeather">
                     <br>
@@ -74,12 +78,15 @@
                     </p>
                 </div>
             </div>
+
+            <!-- forecast weather -->
             <div class="row" id="forecastdiv">
                 <div class="col-xs-12">
                   <br>
                   <h3 id="title"></h3>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-2.4 forecast" id="day1"></div>
                 <div class="col-xs-2.4 forecast" id="day2"></div>
@@ -105,10 +112,13 @@
       </div>
     </div>
   </div>
+
   <!-- jQuery JS -->
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
   <!-- Code to the JavaScript File -->
   <script src="script.js"></script>
+  
 </body>
 </html>
