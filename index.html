@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Dashboard</title>
+  <!-- Bootstrap CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <style>
+        .forecast {
+            background-color: rgb(34, 90, 211);
+            margin: 10px;
+            height: 180px;
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container-sm">
+    <div style="background-color: darkslategray; color: white; height: 80px; text-align: center; padding: 10px;">
+      <h1 class="text-center">
+        <strong> Weather Dashboard </strong>
+      </h1>
+    </div>
+
+    <div class="row" style="margin: 10px;">
+        <div class="col-xs-3">
+            <br>
+            <label for="search-city" style="margin-left: 10px;"><h4>Search for a City:</h4></label>
+            <div class="row">
+                <div class="col-xs-11">
+                    <input type="text" id="cityName" style="margin-left: 20px;">
+                </div>
+                <div class="col-xs-1">
+                    <button type="submit" class="btn btn-default" id="run-search">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <br>
+
+            <div id="citiesDiv" style="margin-left: 7px;">
+
+            </div>
+
+        </div>
+
+       
+        <div class="col-sm-9" style="margin: 0 0 0 40px">
+            <div class="row">
+                <div class="col-xs-12" id="currentWeather">
+                    <br>
+                    <h3 id="cityEl">Los Angeles &nbsp;&nbsp;<span id="date">5/3/2020</span></h3>
+                    <span id="weatherIcon"></span>
+                    <br>
+                    <p>Temperature:&nbsp;<span id="temperature"></span></p>
+                    <p>Humidity:&nbsp;<span id="humidity"></span></p>
+                    <p>Wind Speed:&nbsp;<span id="windSpeed"></span></p>
+                    <p>UV Index:&nbsp;<span id="uvIndex"></span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12"><br><h3>5-Day Forecast</h3></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2.4 forecast">Lorem ipsum dolor sit amet </div>
+                <div class="col-xs-2.4 forecast">Lorem ipsum dolor sit amet </div>
+                <div class="col-xs-2.4 forecast">Lorem ipsum dolor sit amet </div>
+                <div class="col-xs-2.4 forecast">Lorem ipsum dolor sit amet </div>
+                <div class="col-xs-2.4 forecast">Lorem ipsum dolor sit amet </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Region -->
+    <div class="row">
+      <div class="col-sm-12">
+        <hr>
+        <h5 class="text-center">
+          <small>Made with lots and lots of
+            <i class="fa fa-heart"></i>
+          </small>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
